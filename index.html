@@ -196,17 +196,120 @@ footer{border-top:1px solid var(--border);padding-top:2rem;font-size:.7rem;lette
 .reveal{opacity:0;transform:translateY(40px);transition:all .9s cubic-bezier(.16,1,.3,1)}
 .reveal.in{opacity:1;transform:none}
 
-@media(max-width:900px){
-  nav{padding:1rem 1.5rem}
-  #hero{grid-template-columns:1fr;padding:6rem 1.5rem 3rem;text-align:center}
-  .hero-right{order:-1}
-  .img-frame{width:260px;height:320px}
-  .about-grid,.skills-grid{grid-template-columns:1fr}
-  .proj-cards{grid-template-columns:1fr}
-  .proj-card-featured{grid-column:auto;grid-template-columns:1fr}
-  section,#about,#skills,#projects,#contact{padding:5rem 1.5rem}
-  .btn-row{justify-content:center}
-  .hero-desc{margin:0 auto 2rem}
+/* --- التعديلات الخاصة بالموبايل والشاشات الصغيرة --- */
+@media (max-width: 900px) {
+    /* إلغاء الماوس المخصص في الموبايل لأنه بيعمل مشاكل في اللمس */
+    #cur, #cur2 { display: none !important; }
+    body { cursor: auto !important; }
+
+    /* الهيدر */
+    nav {
+        padding: 1rem 1.5rem;
+    }
+    .nav-links {
+        gap: 1rem;
+    }
+    .nav-links a {
+        font-size: 0.7rem;
+    }
+
+    /* قسم الهيرو */
+    #hero {
+        grid-template-columns: 1fr;
+        padding: 7rem 1.5rem 3rem;
+        text-align: center;
+        gap: 2rem;
+        min-height: auto;
+    }
+    .hero-right {
+        order: -1; /* الصورة تظهر فوق الكلام في الموبايل */
+        margin-bottom: 2rem;
+    }
+    .hero-name {
+        font-size: 3rem; /* تصغير الخط */
+    }
+    .hero-desc {
+        margin: 0 auto 2rem;
+        font-size: 0.85rem;
+    }
+    .btn-row {
+        justify-content: center;
+    }
+    .img-frame {
+        width: 280px;
+        height: 350px;
+    }
+    .fc1 { left: -10px; bottom: -10px; }
+    .fc2 { right: -10px; top: -10px; }
+
+    /* قسم About */
+    #about {
+        padding: 4rem 1.5rem;
+    }
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    .about-badge-stack {
+        right: 0;
+        bottom: -10px;
+    }
+
+    /* المهارات */
+    #skills {
+        padding: 4rem 1.5rem;
+    }
+    .skills-grid {
+        grid-template-columns: 1fr; /* مهارة واحدة في كل سطر */
+    }
+
+    /* المشاريع */
+    #projects {
+        padding: 4rem 1.5rem;
+    }
+    .proj-cards {
+        grid-template-columns: 1fr;
+    }
+    .proj-card-featured {
+        grid-template-columns: 1fr; /* عرض مشروع "مستر وفائي" عمودياً */
+    }
+    .proj-info-featured {
+        padding: 1.5rem;
+    }
+    .proj-featured-name {
+        font-size: 1.4rem;
+    }
+
+    /* قسم التواصل */
+    #contact {
+        padding: 5rem 1.5rem;
+    }
+    .contact-name {
+        font-size: 2.8rem;
+    }
+    .si {
+        width: 45px;
+        height: 45px;
+    }
+    .phone-pill {
+        font-size: 0.9rem;
+        padding: 0.7rem 1.2rem;
+    }
+}
+
+/* تعديل إضافي للشاشات الصغيرة جداً (أقل من 400px) */
+@media (max-width: 400px) {
+    .hero-name {
+        font-size: 2.5rem;
+    }
+    .nav-links {
+        display: none; /* إخفاء اللينكات لو الشاشة صغيرة جداً لعدم التداخل */
+    }
+    .logo {
+        width: 100%;
+        text-align: center;
+    }
+}
 }
 </style>
 </head>
