@@ -308,9 +308,51 @@ footer{border-top:1px solid var(--border);padding-top:2rem;font-size:.7rem;lette
     .logo {
         width: 100%;
         text-align: center;
+   /* --- التعديل النهائي لتوسيط الاسم والزراير على الموبايل --- */
+@media (max-width: 900px) {
+    /* 1. جعل الحاوية الرئيسية flex وتوسيط كل العناصر جواها أفقياً */
+    .hero-left {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center; /* توسيط العناصر أفقياً */
+        text-align: center; /* توسيط النصوص (للوصف والاسم) */
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    /* 2. توسيط الاسم وتصغير خطه عشان يظبط وما يخرجش بره الشاشة */
+    .hero-name {
+        font-size: clamp(2rem, 8vw, 3rem) !important; /* تصغير الخط بشكل مرن */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    /* جعل أجزاء الاسم تحت بعضها عشان تملأ المساحة صح */
+    .hero-name .first, 
+    .hero-name .last {
+        display: block !important;
+        width: auto;
+    }
+
+    /* 3. توسيط الوصف وضبط العرض */
+    .hero-desc {
+        max-width: 90%; /* إعطاء مساحة من الجوانب */
+        margin: 0 auto 2rem !important; /* توسيط بالـ margin */
+    }
+
+    /* 4. توسيط حاوية الزراير وضبط تباعدها */
+    .btn-row {
+        justify-content: center !important;
+        gap: 1rem;
+        margin-top: 1rem;
     }
 }
 }
+}
+
 </style>
 </head>
 <body>
